@@ -1,0 +1,26 @@
+.secondary {
+	background: none;
+	color:black;
+}
+
+button{
+
+	position:fixed;
+   right:10px;
+   top:10px;
+}
+
+.main{
+	background: blue;
+	font-size: large;
+}
+
+.ublogo{
+	background: darkblue;
+	padding: 10px;
+}
+
+.twoption{
+	right: 40px;
+
+}
