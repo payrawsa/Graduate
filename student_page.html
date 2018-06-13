@@ -1,23 +1,41 @@
+
 <html>
 
  <head>
   <title>Students Forum</title>
   <link href="main.css" rel="stylesheet" type="text/css" />
+
  </head>
 
  <body>
-   <!-- <a href="http://www.google.com"> Google </a> -->
-   <!-- <br> -->
-   <!-- <header class="main">University at Buffalo</header> -->
+
    <div class="ublogo">
       <img src="ub-logo.png" />
    </div>
    <!-- <button type="button">Professor Log In</button> -->
    <br>
-   <!-- <ul>
-	   <li>item 1</li>
-   </ul> -->
+   <!-- Creating drop-down for the various departments -->
+   <h3>Select the department:</h3>
+   <select>
+      <option>select</option>
+      <option>Computer Science and Engineering</option>
+      <option>Industrial and Systems Engineering</option>
+      <option>Biomedical Engineering</option>
+      <option>Electrical Engineering</option>
+      <option>Mechanical and Aerospace Engineering</option>
+   </select>
+
+   <!-- Creating drop-down for the various instructors of the department -->
+   <h3>Select the instructor:</h3>
+   <select>
+      <option>select</option>
+      <option>Mathew Hertz</option>
+      <option>Varun Chandola</option>
+      <option>Ethan Blanton</option>
+   </select>
+
    <h3>Select the course:</h3>
+   <!-- Creating drop-down for the various courses -->
    <select>
    	<option>select</option>
    	<option>CSE 422/522-Software Engineering Concepts</option>
@@ -25,13 +43,21 @@
    	<option>CSE 486/586-Distributed Systems</option>
    	<option>CSE 468/568-Robotics Algorithms</option>
    </select>
-   	<!-- <p class="secondary">How are you</p>    -->
+
    <h3 class="twoption">Select the TA:</h3>
+   <!-- Creating drop-down for the TA's of the courses -->
    <select>
       <option>select</option>
       <option>Andrew Gabriel</option>
       <option>Timothy Abraham</option>
    </select>
+   <br>
+
+   <h5>Rate the TA:</h5>
+   <!-- Text box for submitting feedback-->
+   <textarea class="feedbackbox" type='text' name="textbox1" size="40" maxlength="100" rows="5" cols="40"></textarea>
+   <br>
+   <button type="button">Submit Feedback</button>
 
  </body>
 </html>
