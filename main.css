@@ -1,0 +1,30 @@
+.secondary {
+	background: none;
+	color:black;
+}
+
+button{
+
+	margin-left: 189px;
+
+
+}
+
+.main{
+	background: blue;
+	font-size: large;
+}
+
+.ublogo{
+	background: darkblue;
+	padding: 10px;
+}
+
+.twoption{
+	right: 40px;
+
+}
+
+.checked {
+    color: orange;
+}
