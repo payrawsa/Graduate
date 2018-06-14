@@ -39,7 +39,28 @@
 }
 ?>
 </select>   
-   
+   <br>
+<br>
+<select id="course-list">
+   <option> Select TA:</option>
+
+
+   <?php
+mysqli_data_seek($courses,0);
+   if($courses->num_rows > 0){
+        //outputting the courses
+        while($row = $courses->fetch_assoc()){
+?>
+        <option>
+                <?php
+                echo $row["TA"];
+                ?>
+        </option>
+<?php
+}
+}
+?>
+</select>
 
    <!-- <h3 class="twoption">Select the TA:</h3> -->
    <!-- Creating drop-down for the TA's of the courses -->
