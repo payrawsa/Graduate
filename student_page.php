@@ -6,7 +6,7 @@
 	<link href="main.css" rel="stylesheet" type="text/css" />
 	<script src="dropdown_menu_disable.js"></script>
 
-</head><?php include "index1.php"; ?>
+</head><?php include "sql_connection.php"; ?>
 
 <script>
 function getTA(val){
