@@ -20,8 +20,8 @@ require_once('index1.php');
 $courses = $conn->query('select * from Employee');
 ?>
 
-<select id="course-list">
-  <option> Select Course:</option>
+<select id="course-list" onchange="check()">
+  <option value="Select Course:">Select Course:</option>
 
 
   <?php
@@ -41,7 +41,7 @@ $courses = $conn->query('select * from Employee');
 </select>
 
 <br>
-<select id="TA_List" <?php if (1==0){?>"javascript:off()"<?php; } else {?> "javascript:off()" <?php ;}?>>
+<select id="TA_List">
 
 
   <option> Select TA:</option>
@@ -63,6 +63,13 @@ $courses = $conn->query('select * from Employee');
   }
   ?>
 </select>
+
+<script>
+var x = document.getElementById("course-list").value;
+if (x=="Select Course:")
+{off();}
+else { on();}
+</script>
 
 <br>
 
