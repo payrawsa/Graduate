@@ -20,9 +20,7 @@ function getTA(val){
 		}
 	});
 }
-// function showMsg(){
 
-// }
 
 </script>
 
@@ -33,12 +31,14 @@ function getTA(val){
 	</div>
 
 	<br>
+	<form action="feedback_submit.php" method="post">
 		<label>Course:</label>
 		<!--this.value will pass the cid to the function-->
-		<select id='course_list' onChange="getTA(this.value);check();">
-			<option value="Select Course:">Select Course:</option>
+		<select id='course_list' onChange="getTA(this.value);check();" name="course_id">
+			<!-- <option value="Select Course:">Select Course:</option> -->
+			<option value="">Select Course:</option>
 			<?php
-			$sql = "SELECT * from Employee";
+			$sql = "SELECT * from TA_table";
 			$result = $conn->query($sql);
 			while($row=$result->fetch_assoc()){
 				?>
@@ -48,7 +48,7 @@ function getTA(val){
 			?>
 		</select>
 		<label>TA:</label>
-		<select id='TA_list' disabled>
+		<select id='TA_list' disabled name="TA_ubit">
 			<option value="">Select TA:</option>
 
 		</select>
@@ -62,10 +62,11 @@ function getTA(val){
 		<div class="rating">
 			<span>&#9734; </span><span>&#9734;</span><span>&#9734;</span><span>&#9734;</span><span>&#9734;</span><span>&#9734;</span>
 		</div>
-		<textarea class="feedbackbox" type='text' name="textbox1" size="40" maxlength="100" rows="5" cols="40"></textarea>
+		<textarea class="feedbackbox" type='text' name="feedback" size="40" maxlength="100" rows="5" cols="40"></textarea>
 		<br><br>
 		<!--<button value="submit" onClick="return showMsg();">Submit</button> -->
 		<button value="submit">Submit</button>
+	</form>
 
 </body>
 </html>

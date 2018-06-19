@@ -3,9 +3,9 @@
 <body>
 <?php
 //to include the file for connection
-//include "index1.php";
+
 require_once('sql_connection.php');
-$query = "SELECT * FROM Employee where cid='".$_POST["cid"]."'";
+$query = "SELECT * FROM TA_table where cid='".$_POST["cid"]."'";
 
 $result = $conn->query($query);
 
@@ -15,7 +15,7 @@ $result = $conn->query($query);
 <?php
   while($rs = $result->fetch_assoc()){
   	?>
-  	<option value=""><?php echo $rs['TA'];?></option>
+  	<option value="<?php echo $rs['ubit'];?>"><?php echo $rs['name'];?></option>
 
   	<?php
   }
