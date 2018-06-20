@@ -1,3 +1,5 @@
+@import url("1-10 Scale Format.css");
+
 .secondary {
 	background: none;
 	color:black;
@@ -6,13 +8,13 @@
 button{
 
 	margin-left: 189px;
-   
-   
+
+
 }
 
 .main{
 	background: blue;
-	font-size: large; 
+	font-size: large;
 }
 
 .ublogo{
@@ -22,7 +24,7 @@ button{
 
 .twoption{
 	right: 40px;
-	
+
 }
 
 .checked {
@@ -47,6 +49,10 @@ button{
 .rating > span:hover ~ span:before {
    content: "\2605";
    position: absolute;
-   left: 0; 
+   left: 0;
    color: gold;
+}
+
+#TA_desc{
+   display: none;
 }
