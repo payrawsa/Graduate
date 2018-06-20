@@ -78,7 +78,7 @@ $("#TA_list").change(function(){
       $("#TA_desc").show();
     }else{
       $("#TA_desc").hide();
-      
+      document.getElementById('TA_val').style.display = "none";
     }
 
 });
