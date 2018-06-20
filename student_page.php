@@ -8,21 +8,7 @@
 
 </head><?php include "sql_connection.php"; ?>
 
-<script>
-function getTA(val){
-	//ajax call to pass cid to get_TAs
-	$.ajax({
-		type : "POST",
-		url: "get_TAs.php",
-		data: 'cid=' +val,
-		success: function(data){
-			$("#TA_list").html(data);
-		}
-	});
-}
 
-
-</script>
 
 
 <body>
@@ -55,6 +41,12 @@ function getTA(val){
 
 
 		<br>
+		<div id="TA_desc">
+			<br>
+		<label>Describe the TA:</label>
+		<textarea class="feedbackbox" type='text' name="TA_descr" size="40" maxlength="100" rows="5" cols="40" id="TA_val"></textarea>  
+	    </div>
+		<br>
 
 		<h5>Rate the TA:</h5>
 		<!-- Text box for submitting feedback-->
@@ -67,6 +59,32 @@ function getTA(val){
 		<!--<button value="submit" onClick="return showMsg();">Submit</button> -->
 		<button value="submit">Submit</button>
 	</form>
+<script>
+function getTA(val){
+	//ajax call to pass cid to get_TAs
+	$.ajax({
+		type : "POST",
+		url: "get_TAs.php",
+		data: 'cid=' +val,
+		success: function(data){
+			$("#TA_list").html(data);
+		}
+	});
+}
 
+$("#TA_list").change(function(){
+	console.log($(this).val());
+    if($(this).val() == 'unknown'){
+      $("#TA_desc").show();
+    }else{
+      $("#TA_desc").hide();
+      document.getElementById('TA_val').style.display = "none";
+    }
+
+});
+
+
+
+</script>
 </body>
 </html>
