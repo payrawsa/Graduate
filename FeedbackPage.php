@@ -5,7 +5,7 @@
     <link href="Professor.css" rel="stylesheet" type="text/css" />
   </head>
 
-  <body>
+  <body style="text-align:center">
     <div class="ublogo">
       <img src="ub-logo.png" />
     </div>
@@ -29,18 +29,17 @@
       }
       //echo "Connected successfully";
 
-      $sql = "SELECT feedback FROM feedback_table WHERE cid = '".$coursenum."'";
+      $sql = "SELECT feedback, student_name, TA_ubit FROM Feedback_Table WHERE cid = '".$coursenum."'";
       $result = $conn->query($sql);
       //print_r($row);
-
-if ($result->num_rows > 0) {
+//echo $result;
+	if ($result->num_rows > 0) {
     // output data of each row
-    while($row = $result->fetch_assoc()) {
-	echo $row;
-         // echo '<option value="'.$num.'">'.$num.'</option>';
+    		while($row = $result->fetch_assoc()) {
+			echo '<hr>',"Student ", $row["student_name"], " left feedback for: ", $row["TA_ubit"],"...", '<br><br>', $row["feedback"];
 
-    }
-} 
+    		}
+	} 
 
     ?>
 
