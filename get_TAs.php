@@ -3,16 +3,16 @@
 <body>
 <?php
 //to include the file for connection
-
+//include "index1.php";
 require_once('sql_connection.php');
 $query = "SELECT * FROM TA_table where cid='".$_POST["cid"]."'";
 
 $result = $conn->query($query);
 
 ?>
-
 <option value=""> Select TA :</option>
-<option value="unknown">Don't Know</option>
+<option value="unknown"> Don't Know </option>
+
 <?php
   while($rs = $result->fetch_assoc()){
   	?>
@@ -20,9 +20,7 @@ $result = $conn->query($query);
 
   	<?php
   }
-  ?>
 
-
-
+?>
 </body>
 </html>
