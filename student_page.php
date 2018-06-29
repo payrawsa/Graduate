@@ -56,7 +56,7 @@
                                     <br>
                                     <label style="color:white">Describe the TA:</label>
                                     <br>
-                                <textarea class="form-control" type="textarea" name="TA_descr" id="comments" placeholder="TA Descripton" maxlength="6000" rows="2"></textarea>
+                                <textarea class="form-control" type="textarea" name="TA_descr" id="comments" placeholder="Describe how the TA looks" maxlength="6000" rows="2"></textarea>
                                 </div>
 <hr>
                                 <label style="color:white">How do you rate your overall experience?</label>
@@ -79,30 +79,38 @@
                         </div>
                         <div class="row">
                             <div class="col-sm-12 form-group">
-                                <label for="comments" style="color:white"> Comments:</label>
-                                <textarea class="form-control" type="textarea" name="feedback" id="comments" placeholder="Your Comments" maxlength="6000" rows="7"></textarea>
+                                <label for="comments" style="color:white"> Feedback:</label>
+                                <textarea class="form-control" type="textarea" name="feedback" id="comments" placeholder="Please give your feedback" maxlength="6000" rows="7"></textarea>
                             </div>
                         </div>
-                        <div class="row">
+                        
+							<!-- <textarea class="feedbackbox" type='text' name="feedback" size="40" maxlength="100" rows="5" cols="40"></textarea> -->
+							<div class="col-sm-12 form-group">
+							<br>Do you want to be contacted?
+							<input type="checkbox" name="contact" value="contactback" id="contact_checkbox" onclick="checkbox_clicked()">
+							</div>
+							<br><br>
+                        <div class="row" id="contact_info" style="display:none">
                             <div class="col-sm-6 form-group" style="color:white">
                                 <label for="name"> Your Name:</label>
-                                <input type="text" class="form-control" id="name" name="stu_name" required>
+                                <input type="text" class="form-control" id="name" name="stu_name" >
                             </div>
                             <div class="col-sm-6 form-group" style="color:white">
                                 <label for="email"> Email:</label>
-                                <input type="email" class="form-control" id="email" name="stu_email" required>
+                                <input type="email" class="form-control" id="email" name="stu_email" >
                             </div>
                         </div>
+                        
                         <div class="row">
-                            <div class="col-sm-12 form-group">
+                            <div class="col-sm-12 form-group"> 
                                 <button type="submit" class="btn btn-lg btn-warning btn-block" value="submit">Submit </button>
                             </div>
-                        </div>
+                        </div> 
                     </form>
-                    <div id="success_message" style="width:100%; height:100%; display:none; "> <h3>Posted your feedback successfully!</h3> </div>
-                    <div id="error_message" style="width:100%; height:100%; display:none; "> <h3>Error</h3> Sorry there was an error sending your form. </div>
+                    <!-- <div id="success_message" style="width:100%; height:100%; display:none; "> <h3>Your feedback has been submitted successfully!</h3> </div>
+                    <div id="error_message" style="width:100%; height:100%; display:none; "> <h3>Error</h3> Sorry! There was an error with your submission. Please try again. </div>
                 </div>
-            </div>
+            </div> -->
         </div>
         <script>
             function getTA(val) {
@@ -128,6 +136,18 @@
 
             });
 
+            function checkbox_clicked(){
+				var checkBox = document.getElementById("contact_checkbox");
+				var contactInfo = document.getElementById("contact_info");
+				if(checkBox.checked == true){
+					contactInfo.style.display = "block";
+
+				}
+				else{
+					contactInfo.style.display = "none";
+				}
+			}
+
 
             function validateForm() {
                 var ubit = document.forms["myForm"]["TA_ubit"].value;
@@ -136,26 +156,13 @@
                 var checkBox = document.getElementById("contact_checkbox");
                 var stud_name = document.forms["myForm"]["stu_name"].value
                 var stud_val = document.forms["myForm"]["stu_email"].value
-                // if(ubit == "" || feedback == "" || (ubit == "unknown" && ta_desc == "") || (checkBox.checked == true && (stud_name == "" || stud_val == ""))){
-                if (ubit == "" || feedback == "" || ta_desc == "") {
-                    alert("Please fill out all the values");
+                //Display error message when the required fields are not keyed in the TA feedback page
+                if (ubit == "" || feedback == "" || (ubit == "unknown" && ta_desc == "") || (checkBox.checked == true && (stud_name == "" || stud_val == ""))) {
+                    alert("Please fill out all the given fields");
                     return false;
                 }
             }
-// 	if(ubit == "unknown"){
-// 		if(ta_desc == ""){
-// 			alert("Please fill out TA description");
-// 			return false;
-// 		}
-// 	}
-// 	if(checkBox.checked == true){
-// 		if(stud_name == "" || stud_val == ""){
-// 			alert("Please fill out your the contact details");
-// 			return false;
-// 		}
 
-// }
-// }
 
         </script>
     </body>
