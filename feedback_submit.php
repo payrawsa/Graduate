@@ -4,13 +4,15 @@
 	
 </head>
 <body>
+	
  	<?php
  	require_once('sql_connection.php');
  		
  	//prepare statement to prevent sql injection
 
- 	$stmt = $conn->prepare("INSERT INTO Feedback_Table (cid,TA_ubit,feedback,TA_description,student_email,student_name) VALUES (?,?,?,?,?,?)");
- 	$stmt -> bind_param("ssssss",$Course_ID,$UBIT,$Feedback,$TA_desc,$Stu_email,$Stu_name);
+ 	$stmt = $conn->prepare("INSERT INTO Feedback_Table (cid,TA_ubit,feedback,TA_description,student_email,student_name,time_stamp) VALUES (?,?,?,?,?,?,?)");
+ 	$stmt -> bind_param("sssssss",$Course_ID,$UBIT,$Feedback,$TA_desc,$Stu_email,$Stu_name,$Time_stamp);
+
 
  	//getting the feedback details from student_page.php
  	$Course_ID = $_POST['course_id'];
@@ -19,7 +21,7 @@
  	$TA_desc = $_POST['TA_descr'];
  	$Stu_email = $_POST['stu_email'];
  	$Stu_name = $_POST['stu_name']; 
-
+ 	$Time_stamp = date('Y-m-d H:i:s');
     //executing the query 	
  	$stmt->execute();
 
@@ -32,6 +34,6 @@ $stmt->close();
 $conn->close();
 
 	?>
-
+<!-- </div> -->
 </body>
 </html>
