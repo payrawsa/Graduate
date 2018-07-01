@@ -35,7 +35,7 @@
   height: 100%;
   margin-left: -250px;
   overflow-y: auto;
-background: linear-gradient(to right, #001A33 ,#008ae6 );
+background: #001A33;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
@@ -83,6 +83,8 @@ background: linear-gradient(to right, #001A33 ,#008ae6 );
   text-decoration: none;
   color: white;
   font-size: 32px;
+	padding-top: 13px;
+	
 }
 
 @media(min-width:768px) {
