@@ -8,11 +8,12 @@
   <link href="bootstrap.min.css" rel="stylesheet">
   <link href="UI-layout.css" rel="stylesheet">
 
+
 </head>
     <?php include "../sql_connection.php"; ?>
 
 <body>
-    <div class="imagebg"></div>
+<div class="imagebg"> </div>
 
   <div id="wrapper">
 
@@ -42,13 +43,57 @@
     <div id="page-content-wrapper" style="   background:#001A33;">
       <div class=container>
         <div class=row>
-          <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle" style="  background: #e4e4e4; color:black; padding-top: 10px">Toggle Menu</a>
-
+       <!--   <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle" style="  background: #e4e4e4; color:black; padding-top: 10px">Toggle Menu</a>
+-->
           <div class="col">
-            <h1 style="text-align:center; color:white; font:38px/1.1 Georgia,serif">Instructor Feedback Review</h1> </div>
+            <h1 style="text-align:center; color:white; font:38px/1.1 Georgia,serif">Instructor Feedback System</h1> </div>
         </div>
       </div>
     </div>
+    <div class="col align-self-center" style="padding-top: 20px">
+<table class="table table-dark" >
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Identity</th>
+      <th scope="col">Rating</th>
+      <th scope="col">Comment</th>
+      <th scope="col">Date/Time</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Jacob</td>
+      <td>6</td>
+      <td>He was able to answer my questions but he was acting very superior like I was stupid or something... not cool</td>
+      <td>7/3/2018 8:00AM</td>
+
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Mark</td>
+      <td>10</td>
+      <td>This guy was awesome! He helped me out like no other TA and he even stayed extra to help!</td>
+      <td>7/1/2018 4:46PM</td>
+
+    </tr>
+
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>1</td>
+      <td>He was extremely rude to me! I can't believe he is allowed to even be a TA. He kept making comments about the way I look. I came for help not to be harassed</td>
+      <td>7/1/2018 4:10PM </td>
+
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
 <?php
     $ubit=$_POST['username'];
     $password=$_POST['password'];
@@ -72,15 +117,17 @@ echo
 ?>
 
 
-
   </div>
   <script src="jquery.min.js"></script>
+<!--
+
   <script>
     $("#menu-toggle").click(function(e) {
       e.preventDefault();
       $("#wrapper").toggleClass("toggled");
     });
   </script>
+-->
 </body>
 
 </html>
