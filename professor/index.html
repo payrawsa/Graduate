@@ -9,11 +9,12 @@
   <link href="UI-layout.css" rel="stylesheet">
 
 </head>
+    <?php include "../sql_connection.php"; ?>
 
 <body>
+    <div class="imagebg"></div>
 
   <div id="wrapper">
-    <div class="imagebg"></div>
 
     <div id="sidebar-wrapper">
       <ul class="sidebar-nav">
@@ -25,19 +26,16 @@
         <img src="bulls.jpg" width="100%" height="100%" style="bottom:0;">
 
         <li>
-          <a href="#">Dashboard</a>
+          <a href="index.html">Dashboard</a>
         </li>
         <li>
-          <a href="#">Manage Courses</a>
+          <a href="Manage-Courses.php">Manage Courses</a>
         </li>
         <li>
-          <a href="#">Review Feedback</a>
+          <a href="Review-Feedback.html">Review Feedback</a>
         </li>
         <li>
-          <a href="#">Contact Requests</a>
-        </li>
-        <li>
-          <a href="#">TA Progress Overview</a>
+          <a href="TA-Progress.html">TA Progress Overview</a>
         </li>
       </ul>
     </div>
@@ -51,6 +49,37 @@
         </div>
       </div>
     </div>
+<?php
+    $ubit=$_POST['username'];
+    $password=$_POST['password'];
+
+    setcookie('ubit',$ubit);
+
+    $sql = "SELECT salt FROM login_info_table WHERE ubit = '".$ubit."'";
+    $result_salt = $conn->query($sql);
+    		while($row = $result_salt->fetch_assoc()) {
+			$salt= $row["salt"];
+    		}
+    $password_en=sha1($password.$salt);//input password encrept
+    $sql = "SELECT password FROM login_info_table WHERE ubit = '".$ubit."'";
+    $result_password = $conn->query($sql);
+    		while($row = $result_password->fetch_assoc()) {
+			$password_or= $row["password"];
+    		}
+$length= strlen($password);
+if(substr_compare($password_or,$password_en, 0 , $length)){
+
+echo
+
+"<script>alert('Wrong Password!'); history.back();</script>";
+
+    }
+
+
+?>
+
+
+
   </div>
   <script src="jquery.min.js"></script>
   <script>
