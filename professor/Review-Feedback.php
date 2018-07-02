@@ -7,9 +7,10 @@
   <title>Instructor Dashboard</title>
   <link href="bootstrap.min.css" rel="stylesheet">
   <link href="UI-layout.css" rel="stylesheet">
+  <link href="button.css" rel="stylesheet" type="text/css" />
 
 </head>
-    <?php include "../sql_connection.php"; ?>
+    <!--<?php include "../sql_connection.php"; ?>-->
 
 <body>
     <div class="imagebg"></div>
@@ -42,33 +43,44 @@
     <div id="page-content-wrapper" style="   background:#001A33;">
       <div class=container>
         <div class=row>
-          <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle" style="  background: #e4e4e4; color:black; padding-top: 10px">Toggle Menu</a>
+          <!--<a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle" style="  background: #e4e4e4; color:black; padding-top: 10px">Toggle Menu</a>-->
 
           <div class="col">
-            <h1 style="text-align:center; color:white; font:38px/1.1 Georgia,serif">Instructor Feedback Review</h1> </div>
+            <h1 style="text-align:center; color:white; font:38px/1.1 Georgia,serif">Instructor Feedback Review</h1> 
+          </div>
+          
         </div>
       </div>
+
+
     </div>
+      <div style="text-align:center">
+          <input class="first_button" type="submit" id="btn_login" value="CSE000"/></br>
+          <input class="login_button" type="submit" id="btn_login" value="CSE111"/></br>
+          <input class="login_button" type="submit" id="btn_login" value="CSE222"/></br>
+          <input class="login_button" type="submit" id="btn_login" value="CSE333"/></br>
+      </div></br>
+
 <?php
-    $ubit=$_POST['username'];
-    $password=$_POST['password'];
-    setcookie('ubit',$ubit);
-    $sql = "SELECT salt FROM login_info_table WHERE ubit = '".$ubit."'";
-    $result_salt = $conn->query($sql);
-    		while($row = $result_salt->fetch_assoc()) {
-			$salt= $row["salt"];
-    		}
-    $password_en=sha1($password.$salt);//input password encrept
-    $sql = "SELECT password FROM login_info_table WHERE ubit = '".$ubit."'";
-    $result_password = $conn->query($sql);
-    		while($row = $result_password->fetch_assoc()) {
-			$password_or= $row["password"];
-    		}
-$length= strlen($password);
-if(substr_compare($password_or,$password_en, 0 , $length)){
-echo
-"<script>alert('Wrong Password!'); history.back();</script>";
-    }
+//     $ubit=$_POST['username'];
+//     $password=$_POST['password'];
+//     setcookie('ubit',$ubit);
+//     $sql = "SELECT salt FROM login_info_table WHERE ubit = '".$ubit."'";
+//     $result_salt = $conn->query($sql);
+//     		while($row = $result_salt->fetch_assoc()) {
+// 			$salt= $row["salt"];
+//     		}
+//     $password_en=sha1($password.$salt);//input password encrept
+//     $sql = "SELECT password FROM login_info_table WHERE ubit = '".$ubit."'";
+//     $result_password = $conn->query($sql);
+//     		while($row = $result_password->fetch_assoc()) {
+// 			$password_or= $row["password"];
+//     		}
+// $length= strlen($password);
+// if(substr_compare($password_or,$password_en, 0 , $length)){
+// echo
+// "<script>alert('Wrong Password!'); history.back();</script>";
+//     }
 ?>
 
 
