@@ -46,7 +46,7 @@
        <!--   <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle" style="  background: #e4e4e4; color:black; padding-top: 10px">Toggle Menu</a>
 -->
           <div class="col">
-            <h1 style="text-align:center; color:white; font:38px/1.1 Georgia,serif">Instructor Feedback System</h1> </div>
+            <h1 style="text-align:center; color:white; font:38px/1.1 Georgia,serif">Instructor's Dashboard</h1> </div>
         </div>
       </div>
     </div>
