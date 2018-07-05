@@ -76,7 +76,7 @@ session_start();
 								$cid= $row["cid"];
 echo '<li class="vc_tta-tab " data-vc-tab=""><a href="#'.$cid.'" data-vc-tabs="" data-vc-container=".vc_tta"><span class="vc_tta-title-text">"'.$cid.'"</span></a></li>';
 			    		}
-						?>
+?>
 
 						</ul>
 					</div>
@@ -89,13 +89,13 @@ echo '<li class="vc_tta-tab " data-vc-tab=""><a href="#'.$cid.'" data-vc-tabs=""
 					$sql = "SELECT cid FROM professor_table WHERE ubit = '".$ubit."'";
 			    		$result = $conn->query($sql);
 			    		while($row = $result->fetch_assoc()) {
-								$count=0;
+
 								$cid= $row["cid"];
 
-			?>
-						<div class="vc_tta-panel" id=<?php echo $cid ;?> data-vc-content=".vc_tta-panel-body">
+
+						echo   	'<div class="vc_tta-panel" id="'.$cid.'" data-vc-content=".vc_tta-panel-body">
 								<div class="vc_tta-panel-heading">
-									<h4 class="vc_tta-panel-title"><a href="#<?php echo $cid ;?>" data-vc-accordion="" data-vc-container=".vc_tta-container"><span class="vc_tta-title-text"><?php echo $cid ;?></span></a></h4></div>
+									<h4 class="vc_tta-panel-title"><a href="#'.$cid.'" data-vc-accordion="" data-vc-container=".vc_tta-container"><span class="vc_tta-title-text">"'.$cid.'"</span></a></h4></div>
 								<div class="vc_tta-panel-body">
 									<div class="wpb_text_column wpb_content_element ">
 										<div class="wpb_wrapper">
@@ -107,58 +107,53 @@ echo '<li class="vc_tta-tab " data-vc-tab=""><a href="#'.$cid.'" data-vc-tabs=""
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Student Name</th>
-      <th scope="col">Student Email</th>
-      <th scope="col">TA UBIT (if known)</th>
-      <th scope="col">TA Description</th>
+      <th scope="col">Student Name/email</th>
+      <th scope="col">TA Name/Description</th>
+      <th scope="col">Rating</th>
       <th scope="col">Feedback</th>
       <th scope="col">Date/Time</th>
 
     </tr>
   </thead>
   <tbody>
-							<?php
-
-					$sql = "SELECT * FROM Feedback_Table WHERE cid = '".$cid."'";
-			    		$result2 = $conn->query($sql);
-			    		while($row = $result2->fetch_assoc()) {
-								$count+=1;
-								$feedback= $row["feedback"];
-								$TA_ubit= $row["TA_ubit"];
-								$student_name= $row["student_name"];
-								$student_email= $row["student_email"];
-								$time_stamp= $row["time_stamp"];
-								$TA_description= $row["TA_description"];
-
-
-
-
-			?>
-
     <tr>
-      <th scope="row"><?php echo $count ;?></th>
-      <td><?php echo $student_name ;?></td>
-      <td><?php echo $student_email ;?></td>
-      <td><?php echo $TA_ubit ;?></td>
-      <td><?php echo $TA_description ;?></td>
-      <td><?php echo $feedback ;?></td>
-      <td><?php echo $time_stamp ;?></td>
+      <th scope="row">1</th>
+      <td>Anton Fischer</td>
+      <td>10</td>
+      <td>Not Applicable</td>
+      <td>7/3/2018 8:00AM</td>
+
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td> 4 pm tuesday office hour.... He had Red Hair</td>
+      <td>1</td>
+      <td>I hate this TA. Instead of clarifying my doubts, he kept on flirting with me asking about dinner dates and my availability. I cant believe he is even allowed to be a TA. I came for help not to be harassed.</td>
+      <td>7/1/2018 4:46PM</td>
 
     </tr>
 
- <?php ;} ?> 
+    <tr>
+      <th scope="row">3</th>
+      <td>James Smith</td>
+      <td>3</td>
+      <td>He was able to answer my questions but he was acting very superior like I was stupid or something... not cool.
+      He was very rude to me and ignoring.</td>
 
+      <td>7/1/2018 4:10PM </td>
 
+    </tr>
   </tbody>
 </table>
 </div>
 										</div>
 									</div>
 								</div>
-							</div>
+							</div>';
 
 
-				<?php	;}
+
+			    		}
 							?>
 						</div>
 					</div>
