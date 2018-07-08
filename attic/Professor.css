@@ -1,0 +1,201 @@
+.ublogo{
+	background: darkblue;
+	padding: 10px;
+}
+
+.welcome_text{
+	font-size:50px;
+	font-weight:bold;
+	text-align:center;
+	margin-top:100px;
+}
+
+/*.form_input{
+	text-align:center;
+}*/
+
+.label_input{
+	font-size:30px;
+	display:inline-block;
+	text-align:right;
+	width:200px;
+	margin-left:700px;
+	margin-top:50px;
+}
+
+.text_input{
+	width:200px;
+	height:40px;
+	font-size:25px;
+	border-radius:5px;
+}
+
+.login_button{
+	width:150px;
+	height:60px;
+	border-radius:20px;
+    background-color: white;
+    color:black;
+    text-align: center;
+    font-size: 30px;
+    /*display:inline-block;*/
+    border-style: solid;
+    border-color: #008CBA;/*blue*/
+    border-width:5px 5px 5px 5px;
+    -webkit-transition-duration:0.4s;
+    transition-duration:0.4s;
+    cursor:pointer;
+    margin-left:870px;
+	margin-top:60px;
+}
+
+.login_button:hover{
+	background-color: #008CBA;/*blue*/
+	color:white;
+}
+
+.jump{
+    font-size:30px;
+    text-align:center;
+    margin-top:30px;
+}
+
+.jump_button{
+    width:150px;
+    height:60px;
+    border-radius:20px;
+    background-color: white;
+    color:black;
+    text-align: center;
+    font-size: 30px;
+    /*display:inline-block;*/
+    border-style: solid;
+    border-color: #008CBA;/*blue*/
+    border-width:5px 5px 5px 5px;
+    -webkit-transition-duration:0.4s;
+    transition-duration:0.4s;
+    cursor:pointer;
+    margin-left:870px;
+    margin-top:10px;
+}
+
+.jump_button:hover{
+    background-color: #008CBA;/*blue*/
+    color:white;
+}
+
+.view_button{
+    width:180px;
+    height:60px;
+    border-radius:20px;
+    background-color: white;
+    color:black;
+    text-align: center;
+    font-size: 30px;
+    /*display:inline-block;*/
+    border-style: solid;
+    border-color: #008CBA;/*blue*/
+    border-width:5px 5px 5px 5px;
+    -webkit-transition-duration:0.4s;
+    transition-duration:0.4s;
+    cursor:pointer;
+    margin-left:80px;
+    margin-top:150px;
+}
+
+.view_button:hover{
+    background-color: #008CBA;/*blue*/
+    color:white;
+}
+
+.label_input_addclass{
+    font-size:30px;
+    display:inline-block;
+    text-align:right;
+    width:200px;
+    margin-left:80px;
+    margin-top:150px;
+}
+
+.text_input_addclass{
+    width:200px;
+    height:40px;
+    font-size:25px;
+    border-radius:5px;
+    /*margin-left:80px;*/
+    margin-top:150px;
+}
+
+.addclass_button{
+    width:180px;
+    height:60px;
+    border-radius:20px;
+    background-color: white;
+    color:black;
+    text-align: center;
+    font-size: 30px;
+    /*display:inline-block;*/
+    border-style: solid;
+    border-color: #008CBA;/*blue*/
+    border-width:5px 5px 5px 5px;
+    -webkit-transition-duration:0.4s;
+    transition-duration:0.4s;
+    cursor:pointer;
+    margin-left:80px;
+    margin-top:150px;
+}
+
+.addclass_button:hover{
+    background-color: #008CBA;/*blue*/
+    color:white;
+}
+
+.dropclass_button{
+    width:180px;
+    height:60px;
+    border-radius:20px;
+    background-color: white;
+    color:black;
+    text-align: center;
+    font-size: 30px;
+    /*display:inline-block;*/
+    border-style: solid;
+    border-color: #008CBA;/*blue*/
+    border-width:5px 5px 5px 5px;
+    -webkit-transition-duration:0.4s;
+    transition-duration:0.4s;
+    cursor:pointer;
+    margin-left:80px;
+    margin-top:150px;
+}
+
+.dropclass_button:hover{
+    background-color: #008CBA;/*blue*/
+    color:white;
+}
+
+select{
+                font-family: "微软雅黑";
+                margin-top:150px;
+                margin-left:80px;
+                background: rgba(0,0,0,0);
+                width: 249px;
+                height: 40px;
+                font-size: 18px;
+                color: black;
+                text-align: center;
+                border: 5px #1a1a1a solid;
+                border-radius: 5px;
+            }
+            option{
+                color: black;
+                background: #A6E1EC;
+                line-height: 20px;
+            }
+            select:focus{
+                border: 2px #ddd solid;
+                box-shadow: 0 0 15px 1px #DDDDDD;
+            }
+            option:hover{
+                background: #EBCCD1;
+            }
